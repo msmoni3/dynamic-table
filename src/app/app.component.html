@@ -1,0 +1,17 @@
+<mat-tab-group (selectedTabChange)="tabClick($event)">
+	<mat-tab label="Search Productddd">
+
+		<app-cust-data-table [(receivedData)]="fakeData1" [(columns)]="columns1" tableTitle="All Products"
+			[(metaCount)]="metaCount" (clickedItem)="viewItem($event)" (pageEvent)="updatePagination($event)">
+		</app-cust-data-table>
+		Searched content would load here
+	</mat-tab>
+
+	<mat-tab label="All Products">
+		<div *ngIf="allResults">
+			<app-cust-data-table [(receivedData)]="fakeData" [(columns)]="columns" tableTitle="All Products"
+				[(metaCount)]="metaCount" (clickedItem)="viewItem($event)" (pageEvent)="updatePagination($event)">
+			</app-cust-data-table>
+		</div>
+	</mat-tab>
+</mat-tab-group>
